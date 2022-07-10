@@ -1,0 +1,25 @@
+{% extends 'filterapp/base.html' %}
+
+{% block title %}
+ User Register Form
+{% endblock %}
+
+{% block body %}
+{% if form %}
+    <div class="row">
+    <div class="col-md-3 col-sm-2"></div>
+     <div class="col-md-6 col-sm-8 col-xs-12">
+    <form method="POST" id="reg_form">
+    {% csrf_token %}
+    <table>
+        {{ form }}
+    </table>
+    <input type="submit" value="Register" class="btn btn-success" style="margin-left: 200px;">
+    </form>
+     </div>
+    <div class="col-md-3 col-sm-2"></div>
+    </div>
+    {% else %}
+    <h1>{{ error }}</h1>
+    {% endif %}
+{% endblock %}
